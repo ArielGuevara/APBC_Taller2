@@ -1,8 +1,16 @@
 # Laboratorio 2: Sistema Distribuido de Registro de Calificaciones
 
 **Universidad de las Fuerzas Armadas ESPE**
+
 **Carrera de Ingeniería de Software**
+
 **Aplicaciones Distribuidas**
+
+
+**Integrantes**
+
+Ariel Reyes
+Ariel Guevara
 
 ## 1. Descripción General del Proyecto
 
@@ -57,7 +65,7 @@ El proyecto evoluciona desde un servidor secuencial (monolítico) a un servidor 
     cd sin_hilos
     py server.py
     ```
-    ![servidor sin hilos](./img/server.png)
+    ![servidor sin hilos](./img/sh_server.png)
 
 2.  **Ejecutar el Cliente:** (En una nueva terminal)
     ```bash
@@ -82,13 +90,14 @@ El proyecto evoluciona desde un servidor secuencial (monolítico) a un servidor 
     python server.py
     ```
     [cite_start]*(Verá el mensaje: `Servidor concurrente escuchando en puerto 12345...` [cite: 288])*
-
+    
+    ![servidor con hilos](./img/ch_server.png)
 3.  **Terminal 3 (y 4, 5...): Levantar Clientes:**
     ```bash
     cd con_hilos
     python client.py
     ```
-
+    ![cautro clientes](./img/ch_4clientes.png)
 ## 4. Ejemplos de Uso
 
 Una vez que los servidores de la Parte 2 estén corriendo, puede probar los siguientes casos:
@@ -98,13 +107,13 @@ Una vez que los servidores de la Parte 2 estén corriendo, puede probar los sigu
 1.  En el Cliente (Terminal 3), elija la opción `1. Agregar calificación`.
 2.  Ingrese los datos. Cuando pida `Materia`, use un NRC que exista en `nrcs.csv` (ej. `MAT101`).
 3.  **Resultado Esperado:** El servidor de calificaciones consultará al servidor NRC, recibirá una respuesta válida y guardará la calificación. [cite_start]El cliente mostrará un mensaje de éxito[cite: 323].
-
+![Nrc valido](./img/ch_NRC_valido.png)
 ### Caso de Prueba 2: Agregar con NRC Inválido
 
 1.  En el Cliente, elija la opción `1. Agregar calificación`.
 2.  Ingrese los datos. Cuando pida `Materia`, use un NRC que no exista (ej. `ABC123`).
 3.  **Resultado Esperado:** El servidor de calificaciones consultará al servidor NRC, recibirá una respuesta de error (no encontrado) y rechazará el registro. [cite_start]El cliente mostrará un mensaje de error como "Materia/NRC no válida" o "NRC no existe"[cite: 312, 324].
-
+![Nrc valido](./img/ch_NRC_invalido.png)
 ## 5. Notas sobre Concurrencia y Limitaciones
 
 ### Cómo Probar la Concurrencia
