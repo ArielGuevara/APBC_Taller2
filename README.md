@@ -10,6 +10,7 @@
 **Integrantes**
 
 Ariel Reyes
+
 Ariel Guevara
 
 ## 1. Descripción General del Proyecto
